@@ -55,6 +55,9 @@ class Jira {
 	 * @return array
 	 */
 	public function baseInformationForIssue($ticket) {
+print_r( $ticket );
+
+die();
 		$name = $ticket->fields->summary;
 		$reporter = $ticket->fields->reporter->name;
 		$assignee = $ticket->fields->assignee->name;
@@ -100,7 +103,7 @@ class Jira {
 
 		// encode jql string, but decode slashes (/),
 		// Jira can only handle them decoded
-		return $this->query(static::REQUEST_GET, "search?fields=".$fields."&maxResults=100&jql=".
+		return $this->query(static::REQUEST_GET, "search?fields=".$fields."&maxResults=200&jql=".
 			str_replace("%252F", "/",
 				rawurlencode($jql)
 			)

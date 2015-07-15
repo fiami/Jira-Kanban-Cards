@@ -80,6 +80,15 @@ class CardsController {
 		$time = number_format($time, 1)." h";
 
 		/**
+		 * get avatar from jira
+		 */
+		$avatar = "";
+		if( $ticket->fields->assignee ) {
+			$av = (array) $ticket->fields->assignee->avatarUrls;
+			$avatar = isset($av["48x48"]) ? $av["48x48"] : "";
+		}
+
+		/**
 		 * collect the basic fields from jira
 		 */
 		$collectedTicket = array(
@@ -89,6 +98,8 @@ class CardsController {
 			"summary" => $ticket->fields->summary,
 			"reporter" => $ticket->fields->reporter ? $ticket->fields->reporter->displayName : "n/a",
 			"assignee" => $ticket->fields->assignee ? $ticket->fields->assignee->displayName : "n/a",
+			"parent" => isset($ticket->fields->parent) ? $ticket->fields->parent->key : "",
+			"avatar" => $avatar,			
 			"remaining_time" => $time
 		);
 

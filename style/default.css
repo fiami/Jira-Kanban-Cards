@@ -105,9 +105,19 @@ div.epic.epicgroup_5 { background-color: #9FEE00 }
 div.epic.epicgroup_6 { background-color: #FFE900 }
 div.epic.epicgroup_7 { background-color: #B90091 }
 div.epic.epicgroup_8 { background-color: #540EAD }
+div.epic.epicgroup_9 { background-color: #FF0000 }
+div.epic.epicgroup_10 { background-color: #FF7400 }
+div.epic.epicgroup_11 { background-color: #009999 }
+div.epic.epicgroup_12 { background-color: #00CC00 }
+div.epic.epicgroup_13 { background-color: #CD0074 }
+div.epic.epicgroup_14 { background-color: #9FEE00 }
+div.epic.epicgroup_15 { background-color: #FFE900 }
+div.epic.epicgroup_16 { background-color: #B90091 }
+div.epic.epicgroup_17 { background-color: #540EAD }
 
 div.ticket div.reporter {
 	white-space: nowrap;
+	visibility: hidden;
 }
 
 div.ticket div.reporter:before {
@@ -120,18 +130,38 @@ div.ticket div.assignee {
 	white-space: nowrap;
 }
 
-div.ticket div.assignee:before {
+/*div.ticket div.assignee:before {
 	content: "To: ";
 	color: #666;
+}*/
+
+div.ticket div.assignee span.name {
+	display: none;
+}
+
+div.ticket div.assignee img {
+	float: left;
+	margin-top: -32px;
 }
 
 div.ticket div.rank {
+	display: none;
 	float: right;
 	white-space: nowrap;
 }
 
 div.ticket div.rank:before {
 	content: "Rank: ";
+	color: #666;
+}
+
+div.ticket div.parent {
+	float: right;
+	white-space: nowrap;
+}
+
+div.ticket div.parent:before {
+	content: "Parent: ";
 	color: #666;
 }
 
